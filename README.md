@@ -35,7 +35,7 @@ The application features a hero section with an interactive canvas, a features s
 ## Project Structure
 
 ```
-Quantum Canvas/
+Quantum-Canvas/
 │
 ├── index.html          # Main HTML file with page structure
 ├── styles.css          # All CSS styles and animations

@@ -1,0 +1,531 @@
+:root {
+    --quantum-void: #000000;
+    --probability-wave: #9C27B0;
+    --superposition-blue: #2196F3;
+    --superposition-green: #4CAF50;
+    --superposition-red: #F44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--quantum-void);
+    color: var(--probability-wave);
+    overflow-x: hidden;
+}
+
+/* Top Bar */
+.top-bar {
+    background: linear-gradient(90deg, var(--quantum-void), rgba(156, 39, 176, 0.1), var(--quantum-void));
+    padding: 0.75rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(156, 39, 176, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.top-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(156, 39, 176, 0.2), transparent);
+    animation: wave-sweep 3s infinite;
+}
+
+@keyframes wave-sweep {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.top-bar p {
+    color: var(--probability-wave);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(156, 39, 176, 0.2);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--probability-wave);
+}
+
+.quantum-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--probability-wave), var(--superposition-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-nav .nav-link {
+    color: var(--probability-wave);
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--probability-wave);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--superposition-blue);
+}
+
+.navbar-toggler {
+    border-color: var(--probability-wave);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28156, 39, 176, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding: 4rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--probability-wave), var(--superposition-blue), var(--superposition-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: quantum-glow 3s ease-in-out infinite;
+    line-height: 1.2;
+}
+
+@keyframes quantum-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(156, 39, 176, 0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(33, 150, 243, 0.7)); }
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(156, 39, 176, 0.8);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-quantum {
+    background: linear-gradient(135deg, var(--probability-wave), var(--superposition-blue));
+    border: none;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-quantum::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-quantum:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-quantum:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(156, 39, 176, 0.5);
+}
+
+.btn-outline-quantum {
+    background: transparent;
+    border: 2px solid var(--probability-wave);
+    color: var(--probability-wave);
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-quantum:hover {
+    background: var(--probability-wave);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(156, 39, 176, 0.3);
+}
+
+/* Quantum Art Container */
+.quantum-art-container {
+    position: relative;
+    background: rgba(156, 39, 176, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 2px solid rgba(156, 39, 176, 0.2);
+    box-shadow: 0 0 50px rgba(156, 39, 176, 0.1);
+}
+
+#quantumCanvas {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    background: var(--quantum-void);
+}
+
+.quantum-overlay {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+.superposition-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.state-label {
+    font-size: 0.75rem;
+    color: var(--probability-wave);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.state-indicators {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.state-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.state-dot.blue {
+    background: var(--superposition-blue);
+    animation-delay: 0s;
+}
+
+.state-dot.green {
+    background: var(--superposition-green);
+    animation-delay: 0.67s;
+}
+
+.state-dot.red {
+    background: var(--superposition-red);
+    animation-delay: 1.33s;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Quantum Particles Background */
+.quantum-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.quantum-particles::before,
+.quantum-particles::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(156, 39, 176, 0.1), transparent);
+    animation: float 20s infinite;
+}
+
+.quantum-particles::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.quantum-particles::after {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    25% { transform: translate(50px, -50px) scale(1.2); opacity: 0.5; }
+    50% { transform: translate(-30px, -100px) scale(0.8); opacity: 0.4; }
+    75% { transform: translate(30px, -50px) scale(1.1); opacity: 0.5; }
+}
+
+/* Features Section */
+.features-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--quantum-void), rgba(156, 39, 176, 0.05));
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--probability-wave), var(--superposition-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: rgba(156, 39, 176, 0.7);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.feature-card {
+    background: rgba(156, 39, 176, 0.05);
+    border: 2px solid rgba(156, 39, 176, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(156, 39, 176, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--probability-wave);
+    box-shadow: 0 20px 40px rgba(156, 39, 176, 0.3);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--probability-wave);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--probability-wave);
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card p {
+    color: rgba(156, 39, 176, 0.8);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Multiverse Section */
+.multiverse-section {
+    padding: 6rem 0;
+    background: var(--quantum-void);
+}
+
+.multiverse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.multiverse-item {
+    position: relative;
+    background: rgba(156, 39, 176, 0.05);
+    border: 2px solid rgba(156, 39, 176, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.multiverse-item:hover {
+    transform: scale(1.05);
+    border-color: var(--probability-wave);
+    box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
+}
+
+.multiverse-item canvas {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.multiverse-item-info {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.multiverse-item-info h4 {
+    color: var(--probability-wave);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.multiverse-item-info p {
+    color: rgba(156, 39, 176, 0.7);
+    font-size: 0.85rem;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    background: linear-gradient(90deg, var(--quantum-void), rgba(156, 39, 176, 0.1), var(--quantum-void));
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(156, 39, 176, 0.3);
+}
+
+.bottom-bar p {
+    color: var(--probability-wave);
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    color: var(--superposition-blue);
+    text-decoration: none;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--superposition-blue), var(--probability-wave));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0 2px;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--superposition-blue), var(--probability-wave));
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.8));
+    transform: scale(1.05);
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .quantum-art-container {
+        margin-top: 2rem;
+    }
+    
+    .multiverse-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

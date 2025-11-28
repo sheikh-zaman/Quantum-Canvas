@@ -63,7 +63,7 @@ Quantum-Canvas/
 
 2. **Navigate** to the project directory:
    ```bash
-   cd "Quantum Canvas"
+   cd "Quantum-Canvas"
    ```
 
 3. **Open** the `index.html` file in your web browser:
